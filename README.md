@@ -1,6 +1,6 @@
-[![Build status](https://badge.buildkite.com/dcc97a44f655a7473ff0f836a2cf154dff016a66db8e4f7405.svg?branch=master)](https://buildkite.com/solana-labs/wool)
+[![Build status](https://badge.buildkite.com/dcc97a44f655a7473ff0f836a2cf154dff016a66db8e4f7405.svg?branch=master)](https://buildkite.com/trezoa-labs/wool)
 
-# solana-perf-libs
+# trezoa-perf-libs
 CUDA, and more!
 
 ## Building
@@ -16,16 +16,16 @@ This should generate the libraries:
 * libcuda-crypt.so - ed25519 verify and poh verify cuda implementations
 * libcl-crypt.so - ed25519 verify and poh verify OpenCL implementations
 
-Copy libraries to the main Solana repo:
+Copy libraries to the main Trezoa repo:
 ```bash
-$ make DESTDIR=${SOLANA_ROOT:?}/target/perf-libs install
+$ make DESTDIR=${TREZOA_ROOT:?}/target/perf-libs install
 ```
 
-Build Solana:
+Build Trezoa:
 ```bash
-$ cd $SOLANA_ROOT
+$ cd $TREZOA_ROOT
 $ cargo build --release
 ```
 
-The library is loaded at startup by `solana_perf::perf_libs`.
-See `perf/src/perf_libs.rs` in the main Solana repo for details.
+The library is loaded at startup by `trezoa_perf::perf_libs`.
+See `perf/src/perf_libs.rs` in the main Trezoa repo for details.

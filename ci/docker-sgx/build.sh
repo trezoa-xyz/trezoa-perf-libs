@@ -3,6 +3,6 @@ set -ex
 
 cd "$(dirname "$0")"
 
-docker build -t solanalabs/sgxsdk .
-docker push solanalabs/sgxsdk
+docker build -t trezoalabs/sgxsdk .
+docker push trezoalabs/sgxsdk
 

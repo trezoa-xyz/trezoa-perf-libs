@@ -36,8 +36,8 @@ $NOPULL || docker pull "$IMAGE"
 shift
 
 ARGS=(
-  --workdir /solana
-  --volume "$PWD:/solana"
+  --workdir /trezoa
+  --volume "$PWD:/trezoa"
   --rm
 )
 
@@ -56,7 +56,7 @@ ARGS+=(--env "CARGO_HOME=/home/.cargo")
 ARGS+=(--security-opt "seccomp=unconfined")
 
 # Ensure files are created with the current host uid/gid
-if [[ -z "$SOLANA_DOCKER_RUN_NOSETUID" ]]; then
+if [[ -z "$TREZOA_DOCKER_RUN_NOSETUID" ]]; then
   ARGS+=(--user "$(id -u):$(id -g)")
 fi
 

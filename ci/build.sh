@@ -38,26 +38,26 @@ done
 echo --- Build SGX
 (
   set -x
-  ci/docker-run.sh solanalabs/sgxsdk src/sgx-ecc-ed25519/build.sh
-  ci/docker-run.sh solanalabs/sgxsdk src/sgx/build.sh
+  ci/docker-run.sh trezoalabs/sgxsdk src/sgx-ecc-ed25519/build.sh
+  ci/docker-run.sh trezoalabs/sgxsdk src/sgx/build.sh
 )
 
 echo --- Build ISPC
 (
   set -x
-  ci/docker-run.sh solanalabs/ispc src/poh-simd/build.sh
+  ci/docker-run.sh trezoalabs/ispc src/poh-simd/build.sh
 )
 
 echo --- Create tarball
 (
   set -x
   cd dist
-  git rev-parse HEAD | tee solana-perf-HEAD.txt
-  tar zcvf ../solana-perf.tgz ./*
+  git rev-parse HEAD | tee trezoa-perf-HEAD.txt
+  tar zcvf ../trezoa-perf.tgz ./*
 )
 
-upload-ci-artifact solana-perf.tgz
+upload-ci-artifact trezoa-perf.tgz
 
 [[ -n $CI_TAG ]] || exit 0
-ci/upload-github-release-asset.sh solana-perf.tgz
+ci/upload-github-release-asset.sh trezoa-perf.tgz
 exit 0

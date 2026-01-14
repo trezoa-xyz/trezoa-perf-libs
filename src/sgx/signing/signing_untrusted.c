@@ -1,5 +1,5 @@
 /*
- * This file contains Solana's SGX enclave code for signing data.
+ * This file contains Trezoa's SGX enclave code for signing data.
  */
 
 #include <stdbool.h>

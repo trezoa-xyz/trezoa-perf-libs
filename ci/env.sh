@@ -25,7 +25,7 @@ if [[ -n $CI ]]; then
     export CI_COMMIT=$BUILDKITE_COMMIT
     export CI_JOB_ID=$BUILDKITE_JOB_ID
     # The standard BUILDKITE_PULL_REQUEST environment variable is always "false" due
-    # to how solana-ci-gate is used to trigger PR builds rather than using the
+    # to how trezoa-ci-gate is used to trigger PR builds rather than using the
     # standard Buildkite PR trigger.
     if [[ $CI_BRANCH =~ pull/* ]]; then
       export CI_PULL_REQUEST=true
@@ -35,7 +35,7 @@ if [[ -n $CI ]]; then
     export CI_OS_NAME=linux
     export CI_REPO_SLUG=$BUILDKITE_ORGANIZATION_SLUG/$BUILDKITE_PIPELINE_SLUG
     # TRIGGERED_BUILDKITE_TAG is a workaround to propagate BUILDKITE_TAG into
-    # the solana-secondary builder
+    # the trezoa-secondary builder
     if [[ -n $TRIGGERED_BUILDKITE_TAG ]]; then
       export CI_TAG=$TRIGGERED_BUILDKITE_TAG
     else

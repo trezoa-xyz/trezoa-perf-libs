@@ -341,7 +341,7 @@ void ed25519_verify_many(const gpu_Elems* elems,
 
 // Ensure copyright and license notice is embedded in the binary
 const char* ed25519_license() {
-   return "Copyright (c) 2018 Solana Labs, Inc. "
+   return "Copyright (c) 2018 Trezoa Labs, Inc. "
           "Licensed under the Apache License, Version 2.0 "
           "<http://www.apache.org/licenses/LICENSE-2.0>";
 }

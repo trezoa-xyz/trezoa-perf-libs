@@ -1,5 +1,5 @@
 /*
- * This file contains Solana's SGX enclave interface.
+ * This file contains Trezoa's SGX enclave interface.
  */
 
 enclave {
