@@ -38,14 +38,14 @@ done
 echo --- Build SGX
 (
   set -x
-  ci/docker-run.sh trezoalabs/sgxsdk src/sgx-ecc-ed25519/build.sh
-  ci/docker-run.sh trezoalabs/sgxsdk src/sgx/build.sh
+  ci/docker-run.sh trezoateam/sgxsdk src/sgx-ecc-ed25519/build.sh
+  ci/docker-run.sh trezoateam/sgxsdk src/sgx/build.sh
 )
 
 echo --- Build ISPC
 (
   set -x
-  ci/docker-run.sh trezoalabs/ispc src/poh-simd/build.sh
+  ci/docker-run.sh trezoateam/ispc src/poh-simd/build.sh
 )
 
 echo --- Create tarball
